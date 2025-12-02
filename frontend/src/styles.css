@@ -1,0 +1,25 @@
+:root{--bg:#f5f6f8;--panel:#fff;--accent:#2b6ef6}
+body{font-family:Inter,Segoe UI,Roboto,Arial;margin:0;background:var(--bg);color:#111}
+.app-root header{background:var(--panel);padding:12px 20px;border-bottom:1px solid #e6e9ef}
+.container{display:flex;gap:12px;padding:16px}
+.notebook-list{width:260px;background:var(--panel);padding:12px;border-radius:6px}
+.notebook-list h2{margin:0 0 8px}
+.notebook-list .new-row{display:flex;gap:6px}
+.notebook-list input{flex:1;padding:6px}
+.notebook-list button{padding:6px 8px}
+.notebook-list ul{list-style:none;padding:0;margin:12px 0}
+.notebook-list li{display:flex;gap:6px;align-items:center;padding:6px}
+.notebook-list li.active{background:#c7d8fe}
+.notebook-list button.load{flex:1;text-align:left;background:none;border:none;padding:0;font-weight:600}
+main{flex:1}
+.placeholder{padding:20px;background:var(--panel);border-radius:6px}
+.editor{background:var(--panel);padding:12px;border-radius:6px}
+.editor-header{display:flex;justify-content:space-between;align-items:center}
+.editor-actions button{margin-left:8px}
+.cells{margin-top:12px}
+.cell{border:1px solid #e6e9ef;border-radius:6px;padding:8px;margin-bottom:10px;background:#fff}
+.cell-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.cell-actions select{margin-right:8px}
+.cell textarea{width:100%;min-height:100px;padding:8px;border:1px solid #e6e9ef;border-radius:6px;font-family:monospace}
+.add-cell-row{padding:8px}
+.delete{background:#ff6b6b;color:#fff;border:none;padding:6px 8px;border-radius:4px}

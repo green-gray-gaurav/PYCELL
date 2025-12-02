@@ -1,6 +1,8 @@
 #here we are going to implemt the notebook
 from collections import defaultdict
+import os
 class notebook():
+    BASE_DIR = "NOTEBOOKS_PYCELL"
     # from utils import checktype , get_tokens
     class cell():
         def __init__(self , line_index = -1 , index= 0 , prev_index = 0):
@@ -13,7 +15,8 @@ class notebook():
 
     def __init__(self , notebook_name):
         self.cells = defaultdict(dict)
-        self.notebook_path = notebook_name
+        self.notebook_name = notebook_name
+        self.notebook_path = f"{notebook.BASE_DIR}/{self.notebook_name}"
         
         #contants
         self.notebook_stamp = "cell"
@@ -43,13 +46,20 @@ class notebook():
             dic = vars(self)
             dill.dump({'cells': dic['cells'], 'notebook_path': dic['notebook_path']}, file)
 
+    def rename_notebook(self , new_name):
+        #chaneg the folder name
+        import os
+        os.rename(self.notebook_path, new_name)
+        self.notebook_path = f"{notebook.BASE_DIR}/{new_name}"
         pass
+
     def create_cell(self , line_index , index =0 , prev_index = 0):
         # self.cells.insert(cell_index , notebook.cell(cell_index))
         self.cells[line_index][index] = notebook.cell(line_index , index, prev_index)
         
         pass
     def delete_cell(self ,line_index , index):
+        print(list(self.cells.keys()))
         del self.cells[line_index][index]
         
         pass
@@ -109,9 +119,9 @@ class notebook():
         for c in self.cells:
             print(c.content)
     def get_name (self):
-        return self.notebook_path
+        return self.notebook_name
     def set_name (self , name):
-        self.notebook_path = name   
+        self.notebook_name = name   
 
 
 
