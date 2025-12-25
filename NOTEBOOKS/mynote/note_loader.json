@@ -1,0 +1,1 @@
+{"notebook_name": "mynote", "notebook_stamp": "cell", "root": [0, 0], "end": [0, 0], "lseq": 1, "iseq": 0, "cells": [{"0_0": {"previous_index": 0, "previous_line": null, "next_line": null, "next_index": 0, "code": "a = 10\nb = 20\nc = 30\noutput(\"numbers: \" , a , b , c)\noutput(\"numbers: \" , a , b , c)", "output": null, "status": 1, "location": [0, 0]}}]}
